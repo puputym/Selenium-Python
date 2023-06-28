@@ -7,7 +7,9 @@ from selenium.webdriver.common.by import By
 class TestLogin(unittest.TestCase):
 
     def setUp(self):
-        self.browser = webdriver.Chrome(ChromeDriverManager().install())
+        chrome_options = webdriver.ChromeOptions()
+        self.browser = webdriver.Chrome(options=chrome_options)
+        #=self.browser = webdriver.Chrome(ChromeDriverManager().install())
         # webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
     
     def test_a_success_login(self):
